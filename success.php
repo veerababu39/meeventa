@@ -4,6 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Welcome</title>
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
+<?php
+$pin=$_GET['pin'];
+?> 
+
+
 </head>
 
 <body>
@@ -26,10 +31,10 @@
 <!--content start-->
 <div class="content">
 
-<h1>Status</h1>
-<p>Your issue successfully submitted.</p>
+<h1>Successfully Submitted</h1>
 
-
+<h1>Your Issue ID is " <?php echo $pin;?> "</h1>
+<p>to know your issue status. </p>
 
 </div>
 <!--content End-->

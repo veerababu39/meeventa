@@ -26,14 +26,25 @@
 <!--content start-->
 <div class="content">
 
-<h1>Contact Us</h1>
-<p>Dr. K APPALANAIDU, Ground Floor, Miracle Home, Contonment,Vizianagaram.<br />
-Phone: 8688962999<br />
-Email: mla@meeventa.com <br />
-Website:<a href="http://www.anaerp.com" target="_blank"> www.anaerp.com </a></p>
+<h1>Enter Issue ID</h1>
+<form action="status.php" method="post">
+<p><input type="text" id="mobile" name="id" size="18" required placeholder="example: 8019726260" maxlength="10"  /></p>
 
+<button type="submit"  value="submit" name="submit" style=" height:40px; width:150px;">Submit</button>
 
-
+</form>
+<div style="height:80px; width:150px;">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<center>
+<?php
+if(isset($_POST['submit'])){
+	include_once 'conn.php';
+	$id = $_POST['id'];
+	 $sql_fr="SELECT * FROM issue WHERE issu_id=$id";
+	  $sel_b_rep= @mysql_query($sql_fr);
+		  $rows=@mysql_fetch_assoc($sel_b_rep);
+		   $rid=$rows['issu_status'];
+		   echo "Status is : $rid";
+}?></center></p></div>
 </div>
 <!--content End-->
 
@@ -42,7 +53,7 @@ Website:<a href="http://www.anaerp.com" target="_blank"> www.anaerp.com </a></p>
 
 <div class="footer-left"><img src="images/footer-left.png" alt="" /></div>
 
-<div class="footer-center"><a href="http://www.sapleo.com" style="color:#FFF">© 2015 by www.sapleo.com</a></div>
+<div class="footer-center">© 2012Mobile Theme</div>
 
 <div class="footer-right"><a href="#"><img src="images/footer-right.png" alt="" width="100" height="40" /></a></div>
 

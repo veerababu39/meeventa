@@ -4,6 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Welcome</title>
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
+
+
+
 </head>
 
 <body>
@@ -26,11 +29,7 @@
 <!--content start-->
 <div class="content">
 
-<h1>Portfolio</h1>
-<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum,There are many variations of passages of Lorem Ipsum available, but the   majority have suffered alteration in some form, by injected humour, or   randomised words which don't look even slightly believable. If you are   going to use a passage of Lorem Ipsum,There are many variations of passages of Lorem Ipsum available, but the   majority have suffered alteration in some form, by injected humour, or   randomised words which don't look even slightly believable. If you are   going to use a passage of Lorem Ipsum,.</p>
-
-
-
+<h1>Successfully Submitted</h1>
 
 </div>
 <!--content End-->
@@ -40,7 +39,7 @@
 
 <div class="footer-left"><img src="images/footer-left.png" alt="" /></div>
 
-<div class="footer-center">© 2012Mobile Theme</div>
+<div class="footer-center"><a href="http://www.sapleo.com" style="color:#FFF">© 2015 by www.sapleo.com</a></div>
 
 <div class="footer-right"><a href="#"><img src="images/footer-right.png" alt="" width="100" height="40" /></a></div>
 

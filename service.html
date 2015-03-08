@@ -5,6 +5,116 @@
 <title>Welcome</title>
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
 
+<script>
+function showHint(str)
+{
+if (str.length==0)
+  { 
+  document.getElementById("mobile").value="";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    
+	//document.getElementById("txtHint").value=xmlhttp.responseText;
+	
+	var response=xmlhttp.responseText;
+	if(response.indexOf('|$|' != -1)) {
+ 
+	  update = response.split('|$|');
+	  
+ 
+	 if(update[1]==null || update[1]=="" || update[1]=="undefined")
+	 {
+		 	 document.getElementById('tswname').value="";
+			 document.getElementById('tswname').readOnly=false;
+	 
+	 }
+	 else
+	 {
+	document.getElementById('tswname').value=update[1];
+	document.getElementById('tswname').readOnly=true;
+	
+	 }
+	  if(update[4]==null || update[4]=="" || update[4]=="undefined")
+	 {
+		 	 document.getElementById('tswemail').value="";
+			 document.getElementById('tswemail').readOnly=false;
+	 
+	 }
+	 else
+	 {
+	document.getElementById('tswemail').value=update[4];
+	document.getElementById('tswemail').readOnly=true;
+	
+	 }
+	 
+	   if(update[2]==null || update[2]=="" || update[2]=="undefined")
+	 {
+		 document.getElementById('mySelect').style.display="inline";
+	 document.getElementById('mandal').style.display="none";
+		 	 document.getElementById('mySelect').value="";
+			 document.getElementById('mandal').readOnly=false;
+	 
+	 }
+	 else
+	 {
+		 document.getElementById('mySelect').style.display="none";
+	 document.getElementById('mandal').style.display="inline";
+	document.getElementById('mySelect').value=update[2];
+	document.getElementById('mandal').readOnly=true;
+	
+	 }
+
+
+
+	  if(update[3]==null || update[3]=="" || update[3]=="undefined")
+	 {
+		 document.getElementById('CarModel').style.display="inline";
+	 document.getElementById('village').style.display="none";
+		 	 document.getElementById('CarModel').value="";
+			 document.getElementById('village').readOnly=false;
+	 
+	 }
+	 else
+	 {
+		 document.getElementById('CarModel').style.display="none";
+	 document.getElementById('village').style.display="inline";
+	document.getElementById('CarModel').value=update[3];
+	document.getElementById('village').readOnly=true;
+	
+	 }
+
+	 
+	 document.getElementById('mandal').value=update[2];
+	  	 
+	  document.getElementById('village').value=update[3];
+     }
+	
+    }
+  }
+xmlhttp.open("GET","Loco_schedule_filler.php?q="+str,true);
+xmlhttp.send();
+}
+
+
+
+   
+
+</script>
+
+
+
 <script type="text/javascript">
 
 function dynamic1(parent,child){
@@ -64,7 +174,7 @@ function dynamic1(parent,child){
 <div class="content">
 
 <h1>services</h1>
-<form action="success.html" method="post" name="form1">
+<form action="feedback1.php" method="post" name="form1">
     
     
     
@@ -100,10 +210,8 @@ function dynamic1(parent,child){
 <td>						<textarea rows="7" cols="20" name="comments" id="tswcomments" required></textarea>
 		    </td>
 		  </tr>				
-		</table>
-	  </form>
-      				<form action="success.html" method="post" name="form2">
-                    <table style="float:left"><tr><td><button type="submit"  value="submit" name="issue" style=" height:40px; width:150px;">Submit</button></td></tr></table></form>
+		</table>	
+                    <table style="float:left"><tr><td><button type="submit"  value="submit" name="submit" style=" height:40px; width:150px;">Submit</button></td></tr></table></form>
 				<form action="index.html" method="post" name="form3"><table ><tr><td><button type="submit"  value="cancel" name="issue2" style=" height:40px; width:150px;">Cancel</button></td></tr></table></form>
  
 
